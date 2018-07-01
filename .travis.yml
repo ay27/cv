@@ -1,35 +1,20 @@
 install:
-  # Silent install from conda docs
-  # https://conda.io/docs/user-guide/install/macos.html#install-macos-silent
-  # adapted using
-  # https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
-
-  # Needed to check if conda already installed
-  - export PATH="$HOME/miniconda/bin:$PATH"
-
-  # If not yet installed, obtain Miniconda
-  # and tectonic
-  # From tectonic docs
-  # https://tectonic-typesetting.github.io/en-US/install.html#the-anaconda-method
-  - if ! command -v conda > /dev/null; then
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-      bash miniconda.sh -b -p $HOME/miniconda -u;
-      conda config --add channels conda-forge;
-      conda config --set always_yes yes;
-      conda update --all;
-      conda install tectonic;
-    fi
-  - conda info -a
+- export PATH="$HOME/miniconda/bin:$PATH"
+- if ! command -v conda > /dev/null; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  -O miniconda.sh; bash miniconda.sh -b -p $HOME/miniconda -u; conda config --add
+  channels conda-forge; conda config --set always_yes yes; conda update --all; conda
+  install tectonic; fi
+- conda info -a
 cache:
   directories:
-    - $HOME/miniconda
-    - $HOME/.cache/Tectonic
+  - "$HOME/miniconda"
+  - "$HOME/.cache/Tectonic"
 script:
- - tectonic ./main.tex --print
+- tectonic ./main.tex --print
 deploy:
   provider: releases
   api_key:
-    secure: WTVQ/sBB7xU6un5UKKaR5FUWMFoHnurzVqQ6sTSdDa0oxX3n9WTgEYV6VxKWX68Rqgw4H04WUN6ioynW7HCqRHv/OR87rg5KZDFBtGEulrSuCzpO0De0ghSLJq7P3uMBWnuGXMUIXEtFoemXME+WNlDGbzyHynOM4SIa5IbYQaNwwpidnD7+9RIRnVqL38XNS/jqEC4zVSSZSi680RRW364Kga1VUQXFljX09W+qUVNl7xt+RKZW8f3/PvE2qe7K6alMPr74ksgz2ygEe82QOluGUfDO8Zz9M78N+NSztnV8DHl7ZG4l3lG6kKnS+hihx5nio4/iWN+N7ED5EWQyolHQYeIGMge8eIl+94tBMnpTIU+vx0fSdEYMPu/IPgkd2uSmVdQLXKr3O65JMVbphsV1dDa4rSxrUrSFjclrM3fvCXfk0rloTDTft1INC5OtGbsQpGMKIhREHqNAf4ncMkaYp4/LoduWC44Jy4Kt2tSummB0znMNnMZEUtumPD65IobrnuiwHA8lUuyTDo6Btekqj27873/xpjHm6DTRUYzKpqZTJxzXwYY2SN6Zcs+3G7wWv0p/jg+olsef0DrI1S06N6AfeaXiOSN9ANhvx0/MwOGZrdqiJyd8T8R1GgOKYrgF9JboL66qoavkkRXWf+SsdxQ+QYs0Q7JMMkNOvPE=
+    secure: XaSUgExwOyV5/P6lUhDxHzeaeIaVdxNOoxxkoHv/Yr34L5gCrA1Nk3evL1dSceyzQndoXKuucnYLr/CCs7BAlgZP3mXXD27Xh5BUQKPa3e2nroA9cqcFXGJyM8GqcikD/i+rB2RlpLfnXUyD0PzHfwK9jsJNQJocKJVzZvR9CsmzLLqR0IhaIyn1Qau0EuEDGqwAl9nZZdE0zXKWbuthDXZ9uIp8FXJryowfz1UdPJcOrJRKksMdUa4dN61viw/c8j1tyP1FkYZ5pyL9mJ7kRJ6OFiGta9n7UImc58XlAHzHTY95gI54WAnQaWzSxtNhZhRkGj2gjGyj2PJlumU0SRANV6GgwEgjFEDWZK13fZsKCjYg73euVw/zq/ph0r96XQJNTT+S1pGAChiiGG9+dLpNw66USoAMYRQplFJa51hiO7hcWCfijpTLrQ9Levcxmv2ubw9nH1txdht8D3gykbQlcfMzjkV2WDqNJCVuEXomJRUG3uuTQhoVzinlQwDHlKx3+CuqjgO4VUoiQyrfLbDzzmHwN7TTFGYZYlZYEP6A/aDdAr+vW3mZV77RhR5COMOYV7QPkYld7k+JPSZq7NtchSphq+SURszJwEZm4kvTwHlWYk1DtCC/cLdn3WUWALm99tcm/SwEJi8jbxpTUUlFYHpFI+zxW/apxXMG904=
   file: main.pdf
   skip_cleanup: true
   on:
