@@ -1,0 +1,127 @@
+% LaTeX file for resume
+% This file uses the resume document class (res.cls)
+
+\documentclass{res}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\usepackage{newcent}   % uses new century schoolbook postscript font
+\setlength{\textheight}{9,5in} % increase text height to fit on 1-page
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+
+\usepackage[top=0.8in, bottom=0.8in, left=0.8in, right=0.8in]{geometry}
+
+
+% \renewcommand{\baselinestretch}{0.95}
+
+\begin{document}
+\name{Jinmian Ye\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\address{Master Student \\School of Computer Science and Engineering \\University of Electronic Science and Technology of China \textbf{(UESTC)}}
+
+\address{Email: jinmian.y@gmail.com \\
+         Phone: (86) 177 0811 2046 \\ Github: https://github.com/ay27}
+
+\begin{resume}
+
+
+\section{EDUCATION \& INTERNSHIP}
+\vspace{-1ex}
+\noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+\textbf{Intern}\quad (Feb. 2018 - Aug. 2018)  \hfill Advisor: Chen Qiang, Shuicheng Yan
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+\item AI Institute, \textbf{360 Inc.}
+\end{itemize}
+\vspace{-2ex}
+\textbf{M.S.}\quad (Sept. 2016 - Jun. 2019) \hspace{178pt} Advisor: Zenglin Xu
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+\item Computer Science and Technology, \textbf{UESTC}
+\end{itemize}
+\vspace{-2ex}
+\textbf{Academic Visiting}\quad (2017 Summer) \hspace{144pt} Advisor: Irwin King, Michael R. Lyu
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+\item Department of Computer Science and Engineering , \textit{The Chinese University of Hong Kong} (\textbf{CUHK})
+\end{itemize}
+\vspace{-2ex}
+\textbf{B.S.}\quad (Sept. 2012 - Jun. 2016)
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+\item Computer Science and Engineering, \textbf{UESTC}
+\item \textit{Thesis}: Solving ADMM-based distributed matrix factorization on Parameter Server
+\end{itemize}
+
+
+\section{RESEARCH EXPERIENCES}
+\vspace{-1ex}
+\noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+\textbf{Compressing Embedding Layer} (Feb. 2018 - Now)
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+    % \item \textit{Learning Compact Recurrent Neural Networks with Block-Term Tensor Decomposition}
+    \item I'm trying to optimize and compress the huge embedding layer in natural language processing area, achieving hundreds of times the compression ratio while maintaining the model performance.
+\end{itemize}
+
+\vspace{-2ex}
+\textbf{Neural Networks Model Pruning} (May 2017 - Nov. 2017)
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+    % \item \textit{Learning Compact Recurrent Neural Networks with Block-Term Tensor Decomposition}
+    \item Using Block-Term tensor decomposition to prune the fully-connected input-to-hidden weight matrix in RNN, reducing thousands time of learnable parameters while increasing up to 15.6\% accuracy comparing to vanilla LSTM.
+\end{itemize}
+
+\vspace{-2ex}
+\textbf{Deep Learning Framework Development} (Jan. 2017 - Sept. 2017)
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+    % \item \textit{SuperNeurons:Dynamic GPU Memory Management for Training Deep Nonlinear Neural Networks}
+\item A dynamic GPU memory management runtime that enables training super deep and wide models. Some intuitive rules such as liveness analysis, re-computation, etc, are proposed to enhance memory utilization efficiency.
+\end{itemize}
+
+% \vspace{-2ex}
+% \textbf{Parallel Tensor Factorization} (Jan. 2016 - Sept. 2016)
+% \begin{itemize}\setlength{\itemsep}{-0.5ex}
+%     % \item \textit{Simple and Efficient Parallelization for Probabilistic Temporal Tensor Factorization}
+% \item An ALS-based parallel tensor factorization solving by ADMM algorithm. We proposed a data split strategy and solved sub-problems in parallel, with higher efficiency and accuracy.
+% \end{itemize}
+
+\section{RESEARCH INTERESTS}
+\vspace{-1ex}
+\noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+    \item Model Pruning and Accelerating in Neural Networks
+    \item Parallel and High Performance Computing
+    \item Tensor Decomposition and Compression
+\end{itemize}
+
+
+
+
+% \section{AWARDS}
+% \vspace{-1ex}
+% \noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+% \begin{itemize}\setlength{\itemsep}{-0.5ex}
+%     \item[1.] Specialty student of UESTC, gained the postgraduate admissions eligibility, Sept. 2015
+%     \item[2.] First Price of National College Student Information Security Contest (\textbf{CISCN}), Aug. 2015
+%     \item[3.] First Price of Southwest Division \textbf{Challenge Cup}, Jul. 2015
+% \end{itemize}
+
+\section{SKILLS}
+\vspace{-1ex}
+\noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+\item Proficient in Python, C/C++, Java
+\item Knowledgeable in TensorFlow, PyTorch, Caffe, etc.
+\end{itemize}
+
+
+\section{PUBLICATIONS}
+\vspace{-1ex}
+\noindent\rule[0.1\baselineskip]{\textwidth}{1pt}
+\begin{itemize}\setlength{\itemsep}{-0.5ex}
+    \item[1.] Zhonghui You, \textbf{Jinmian Ye}, Kunming Li,  Ping Wang. Adversarial Noise Layer: Regularize Neural Network By Adding Noise. (arXiv preprint)
+    
+    \item[2.] \textbf{Jinmian Ye}, Linnan Wang, Guangxi Li, Di Chen, Shandian Zhe, Xinqi Chu, Zenglin Xu. Learning Compact Recurrent Neural Networks with Block-Term Tensor Decomposition. (CVPR-2018)
+    
+    \item[3.] Guangxi Li, \textbf{Jinmian Ye}, Haiqin Yang, Di Chen, Zenglin Xu: BT-Nets: Simplifying Deep Neural Networks via Block Term Decomposition. (arXiv preprint)
+    
+    \item[4.] Linnan Wang, \textbf{Jinmian Ye}, Yiyang Zhao, Wei WU, Ang Li, Shuaiwen Leon Song, Zenglin Xu, Tim Kraska. SuperNeurons:Dynamic GPU Memory Management for Training Deep Nonlinear Neural Networks. (PPoPP-2018)
+
+    
+
+\end{itemize}
+\end{resume}
+\end{document}
